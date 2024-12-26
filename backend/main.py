@@ -1,2 +1,8 @@
 from fastapi import FastAPI
-from backend.routes import projects
+from routes import projects
+
+
+app = FastAPI()
+
+app.include_router(projects.projects, prefix="/projects", tags=["Projects"])
+
